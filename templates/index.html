@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyNotes</title>
+	<link rel="stylesheet" href="../static/css/styles.css">
+    <script src="../static/js/api.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: [
+          'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
+    </script>
+</head>
+
+<body>
+	<div class="container">
+
+		<header class="header">
+			<h1 class="app_title">MyNotes</h1>
+			<div class="info_container">
+				<p class="info"><b>Info:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex laudantium
+					possimus voluptas recusandae impedit, magnam tenetur earum officia incidunt ullam accusamus
+					reiciendis sint commodi unde? Quasi laborum optio culpa! Suscipit, aliquid expedita error amet quam
+					nam adipisci? Esse ullam animi doloremque officia possimus odio quas enim voluptate voluptates,
+					corporis voluptatibus?</p>
+			</div>
+		</header>
+
+		<div class="user_widget_container">
+			<button onclick="showhide('hidedblock')" class="form_dropdown_button" id="hider">Add new</button>
+			<div class="toggled_down_form">
+				<input class="title_input" type="text" id="new_note_title" placeholder="Title">
+				<div class="main_text_container">
+					<textarea class="main_text" id="mytextarea" placeholder="Text"></textarea>
+				</div>
+				<div class="submit_button" onclick="createNote()">Submit</div>
+			</div>
+		</div>
+
+		<section class="section_container"></section>
+	</div>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
