@@ -30,16 +30,12 @@
 		<header class="header">
 			<h1 class="app_title">MyNotes</h1>
 			<div class="info_container">
-				<p class="info"><b>Info:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex laudantium
-					possimus voluptas recusandae impedit, magnam tenetur earum officia incidunt ullam accusamus
-					reiciendis sint commodi unde? Quasi laborum optio culpa! Suscipit, aliquid expedita error amet quam
-					nam adipisci? Esse ullam animi doloremque officia possimus odio quas enim voluptate voluptates,
-					corporis voluptatibus?</p>
+				<p class="info"><b>Info:</b> Чтобы создать заметку нажмите "Add new", введите заголовок и тело заметки. Чтобы отредактировать - нажмите "Edit". Чтобы удалить - "Delete". Пользуйтесь встроенным редактором TinyMCE, чтобы преобразить ваш текст. Проверьте Wi-Fi. Удачи!</p>
 			</div>
 		</header>
 
 		<div class="user_widget_container">
-			<button onclick="showhide('hidedblock')" class="form_dropdown_button" id="hider">Add new</button>
+            <button class="dropdown_button" onclick="hideElement('toggled_down_form')">Add new</button>
 			<div class="toggled_down_form">
 				<input class="title_input" type="text" id="new_note_title" placeholder="Title">
 				<div class="main_text_container">

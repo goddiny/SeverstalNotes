@@ -72,24 +72,21 @@ button:hover{
 }
 
 .user_widget_container {
-	margin: 0 0 25px 0;
 	display: flex;
 	flex-flow: column nowrap;
 	height: auto;
 }
-
-.form_dropdown_button {
-
+.dropdown_button {
+	margin-bottom: 25px;
 }
-
 .toggled_down_form {
-	display: flex;
+	display: none;
 	flex-flow: column nowrap;
 }
 
 .title_input {
 	padding: 10px 20px;
-	margin: 25px 0 25px 0;
+	margin: 0 0 25px 0;
 	height: auto;
 	width: 100%;
 	border: none;
@@ -156,8 +153,19 @@ button:hover{
 }
 
 .submit_button {
+	text-decoration: none;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	padding: 10px 20px;
 	background-color: #4ed24e;
-	width: 100%;
+	width: 20%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 20px;
 }
 
 .section_container {

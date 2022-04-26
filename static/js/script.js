@@ -34,16 +34,20 @@ const deleteNote = (id) => {
 }
 
 const createNote = () => {
-    const title = document.getElementById('new_note_title').value;
+    const title = document.getElementById('new_note_title');
     const text = tinyMCE.get('mytextarea').getContent();
     if (!title) return alert('Please, enter Title');
     const data = {
-        title: title,
+        title: title.value,
         text: text
     }
     postData('api/notes', data)
         .then((data) => {
-            if (data) return getNotes()
+            if (data) {
+                title.value = '';
+                tinyMCE.get('mytextarea').setContent('');
+                return getNotes()
+            }
         })
 }
 
@@ -58,13 +62,26 @@ const editNote = (id) => {
                 }
                 putData('/api/notes/' + id, data)
                     .then((data) => {
-                        if (data) return getNotes()
-                })
+                        if (data) {
+                            saveButton.onclick = () => {
+                                createNote()
+                            }
+                            title_input.value = '';
+                            tinyMCE.get('mytextarea').setContent('');
+                            return getNotes()
+                        }
+                    })
             }
             const title_input = document.getElementById('new_note_title');
             title_input.value = data.title;
             tinyMCE.get('mytextarea').setContent(data.text);
         })
+}
+
+const hideElement = (className) => {
+    const hidedBlock = document.getElementsByClassName(className)[0]
+    return hidedBlock.style.display === 'flex' ? hidedBlock.style.display = 'none' : hidedBlock.style.display = 'flex'
+
 }
 
 
